@@ -14,6 +14,7 @@ public class MovimientoJugador : MonoBehaviour
     {
        transform.localScale = escala;
        Debug.Log("La vida del jugador es 100");
+       Debug.Log("Hola buen dia");
     }
 
   
