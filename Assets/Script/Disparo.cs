@@ -11,10 +11,22 @@ public class Disparo : MonoBehaviour
     void Update()
     {
         Desplazamiento();
+        CambioEscala();
     }
 
     void Desplazamiento()
     {
         transform.position += direction * speed * Time.deltaTime;
     }
+
+     void CambioEscala()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            transform.localScale = transform.localScale * 2 ;
+        }
+    
+    }
+
+        
 }

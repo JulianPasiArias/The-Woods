@@ -8,33 +8,48 @@ public class Bala : MonoBehaviour
     public GameObject prefab;
     public Transform spawn;
 
+    public float tiempo = 2f;
+    public float tiempoRestante;
+
+   
+    void Start()
+    {
+        ResetTime();
+    }
+   
+   
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-
-        {
-           Disparo();
-        }
-
-        if(Input.GetKeyDown(KeyCode.L))
-
-        {
-           Disparo();
-        }
-        if(Input.GetKeyDown(KeyCode.J))
-
-        {
-           Disparo();
-        }
+       
+         Temporizador();
+         
     }
 
     void Disparo()
     {
+        
         Instantiate(prefab,spawn.position,transform.rotation);
-        Debug.Log("El jugador esta disparando");
+
+    }
+
+    void ResetTime()
+    {
+        tiempoRestante = tiempo;
     }
     
+
+    void Temporizador()
+    {
+        tiempoRestante -= Time.deltaTime;
+        if( tiempoRestante <= 0f)
+        {
+             Disparo();
+            ResetTime();
+            Debug.Log("Se ha reseteado el temporizador");
+        }
+    }
     
+   
 
     
 }
