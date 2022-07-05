@@ -7,7 +7,8 @@ public class Movimiento : MonoBehaviour
     public float speed = 5f;
 
     public GameObject camaraUno;
-    public GameObject camaraDos;
+    private float rotateSpeed = 100f;
+    
 
 
     void Start()
@@ -19,10 +20,7 @@ public class Movimiento : MonoBehaviour
     void Update()
     {
        MovimientoPj(); 
-       if(Input.GetKeyDown(KeyCode.C))
-       {
-            CambioCamara();
-       }
+       
        
     }
 
@@ -32,24 +30,12 @@ public class Movimiento : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(new Vector3(horizontalInput,0,verticalInput)* speed * Time.deltaTime);
+        transform.Translate(new Vector3(0, 0, verticalInput) * speed * Time.deltaTime);
+        transform.Rotate(new Vector3(0, horizontalInput, 0 ) * rotateSpeed * Time.deltaTime);
     }
 
 
-    void CambioCamara()
-    {
-        if (camaraUno.activeInHierarchy)
-        {
-            camaraDos.SetActive(true);
-            camaraUno.SetActive(false);
-        }
-        else
-        {
-            camaraDos.SetActive(false);
-            camaraUno.SetActive(true);
-        }
-     
-    }
+   
 }
 
 
