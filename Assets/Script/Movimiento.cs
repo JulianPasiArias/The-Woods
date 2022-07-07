@@ -6,7 +6,7 @@ public class Movimiento : MonoBehaviour
 {
     public float speed = 5f;
 
-    public GameObject camaraUno;
+
     private float rotateSpeed = 100f;
     
 
