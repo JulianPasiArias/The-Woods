@@ -57,7 +57,7 @@ public class SeguirJugador : MonoBehaviour
 
     void LookAtPlayer()
     {
-        transform.LookAt(playerPos);
+        
         Quaternion newRotation = Quaternion.LookRotation(playerPos.position - transform.position);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, speedToLook * Time.deltaTime);
     }
