@@ -23,7 +23,7 @@ public class BumpWall : MonoBehaviour
         numeroRandom = Random.Range(0, 20);
     }
 
-    void OnTriggerStay(Collider col)
+    void OnTriggerEnter(Collider col)
     {
     
         if(col.transform.gameObject.tag == "Player")

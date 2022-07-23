@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SeguirJugador : MonoBehaviour
 {
-   
+    public Animator anim;
+    
     public Transform playerPos;
     public float enemySpeed = 2f;
     public float speedToLook = 1f;
@@ -47,6 +48,7 @@ public class SeguirJugador : MonoBehaviour
         if(distance < 2)
         {
             enemySpeed = 0f;
+            
         }
         else
         {
@@ -65,6 +67,8 @@ public class SeguirJugador : MonoBehaviour
     void FollowPlayer()
     {
         transform.position = Vector3.MoveTowards(transform.position, playerPos.position, enemySpeed * Time.deltaTime);
+        anim.SetBool("Run", true);
+
     }
 
     

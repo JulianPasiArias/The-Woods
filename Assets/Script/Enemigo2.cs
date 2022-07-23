@@ -6,6 +6,7 @@ public class Enemigo2 : MonoBehaviour
 {
   public Transform playerPos;
     public float enemySpeed = 2f;
+    
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class Enemigo2 : MonoBehaviour
     {
         FollowPlayer();
         CheckDistance();
+        
     }
 
 
@@ -38,4 +40,5 @@ public class Enemigo2 : MonoBehaviour
             enemySpeed = 2f;
         }
     }
+    
 }

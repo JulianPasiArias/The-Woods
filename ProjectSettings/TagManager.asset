@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Portal
   - Pared
+  - Planta
+  - Hongo
+  - Roca
   layers:
   - Default
   - TransparentFX
@@ -15,9 +18,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Piso
+  - Player
+  - Roca
   - 
   - 
   - 
@@ -40,6 +43,30 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fondo 5
+    uniqueID: 1034754845
+    locked: 0
+  - name: Fondo 4
+    uniqueID: 2732195847
+    locked: 0
+  - name: Fondo 3
+    uniqueID: 1755411953
+    locked: 0
+  - name: Fondo 2
+    uniqueID: 4130780647
+    locked: 0
+  - name: Fondo
+    uniqueID: 3806181425
+    locked: 0
+  - name: Piso 2
+    uniqueID: 2949945237
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3806271459
+    locked: 0
+  - name: Frente
+    uniqueID: 3119427697
     locked: 0
