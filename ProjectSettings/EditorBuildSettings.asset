@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 76c82c6d0ddcc024ebde4209eb482301
+  - enabled: 1
     path: "Assets/Scenes/Interior Caba\xF1a.unity"
     guid: 3cedd7a16c5d5804bac3f0fe5f746106
   - enabled: 1

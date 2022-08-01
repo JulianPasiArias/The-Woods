@@ -49,6 +49,7 @@ public class MuerteRespawn : MonoBehaviour
     {
         anim.SetTrigger("Death");
         EfectoSonido(clipMuerte);
+        PlayerUI.health -= 1;
         
 
     }

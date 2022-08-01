@@ -41,6 +41,6 @@ public class NextLevel : MonoBehaviour
 
     void LoadNextLevel()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
