@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Trampa : MonoBehaviour
 {
-    
+
     public Transform spawnPoint;
     public GameObject prefab;
+    public GameObject roca1,roca2;
 
     public float tiempo = 4f;
     public float tiempoRestante;
@@ -56,5 +57,7 @@ public class Trampa : MonoBehaviour
     void ActivarTrampa()
     {
         Instantiate (prefab, spawnPoint.position, Quaternion.identity);
+        Destroy(roca1);
+        Destroy(roca2);
     }
 }
