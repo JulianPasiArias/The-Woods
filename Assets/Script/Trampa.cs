@@ -14,6 +14,7 @@ public class Trampa : MonoBehaviour
 
     void Start()
     {
+        
         ResetTime();
     }
 

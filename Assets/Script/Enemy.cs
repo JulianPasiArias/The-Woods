@@ -3,11 +3,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int life;
-    public string nombre;
-    public float speed;
-    public float agroRange;
-    public GameObject player;
+    
+    
     
     
 

@@ -1,29 +1,101 @@
-﻿
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Skeleton : Enemy
+public class Skeleton : MonoBehaviour
 {
+    public Transform player;
+    public float agroRange;
+    public float speed = 3f;
+    public float attackRange;
 
-    private void Start()
+
+    public Animator anim;
+    Rigidbody2D rb;
+
+
+    void Start()
     {
-        BasicAttack();
-        BoneAttack();
-        CheckRange();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    public void BoneAttack()
+
+    void Update()
     {
-        Debug.Log("Realizando ataque de hueso");
+        LookAtPlayer();
+        CheckDistance();
     }
 
-    public override void CheckRange()
+
+    void CheckDistance()
     {
-        base.CheckRange();
-       
-        Debug.Log("Perseguir Jugador");
-        
+        float distToPlayer = Vector2.Distance(transform.position, player.position);
+
+        if (distToPlayer < agroRange)
+
+        {
+            FollowPlayer();
+            anim.SetBool("Run", true);
+
+        }
+        else
+        {
+            anim.SetBool("Run", false);
+
+        }
+        if (distToPlayer <= attackRange)
+        {
+            anim.SetBool("Attack", true);
+        }
+        else
+        {
+            anim.SetBool("Attack", false);
+        }
 
     }
+
+
+
+    void LookAtPlayer()
+    {
+        if (transform.position.x < player.position.x)
+        {
+
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        {
+
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+
+
+    }
+    void FollowPlayer()
+    {
+
+
+        if (transform.position.x < player.position.x)
+        {
+            rb.velocity = new Vector2(speed, 0);
+
+        }
+        else
+        {
+            rb.velocity = new Vector2(-speed, 0);
+
+        }
+
+
+
+    }
+
+
+
 
 
 }
+
+    
+

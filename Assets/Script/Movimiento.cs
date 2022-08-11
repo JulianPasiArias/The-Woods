@@ -24,7 +24,8 @@ public class Movimiento : MonoBehaviour
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        Debug.Log("Tengo que encontrar ese hongo para ayudar a mi hija");
+        
+        
     }
 
   
