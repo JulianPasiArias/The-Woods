@@ -19,23 +19,31 @@ public class Movimiento : MonoBehaviour
 
     public Animator anim;
 
+   
 
 
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        
+       
         
     }
 
   
     void Update()
     {
-       MovimientoPj(); 
-       if(isGrounded)
-       {
-           Jump();
-       }
+       
+        if(MuerteRespawn.isDead == false)
+        {
+            MovimientoPj();
+            if (isGrounded)
+            {
+                Jump();
+            }
+        }
+       
+
+        
      
     }
        
@@ -56,6 +64,7 @@ public class Movimiento : MonoBehaviour
         Vector3 inputPlayer = new Vector2(horizontalInput,0);
 
         transform.Translate(inputPlayer * speed * Time.deltaTime);
+       
 
 
         if(horizontalInput >0)
@@ -111,7 +120,7 @@ public class Movimiento : MonoBehaviour
         if(coli.gameObject.CompareTag("Hongo"))
         {
             EfectoSonido(clipRisa);
-            Debug.Log("Con esto podré curar a mi hija");
+            
         }
     }
 

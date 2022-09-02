@@ -14,9 +14,7 @@ public class Hongo : MonoBehaviour
         {
            
             Destroy(gameObject);
-            Debug.Log("Hay algo sospechoso acerca de este lugar");
-            
-           
+
         }
 
     }

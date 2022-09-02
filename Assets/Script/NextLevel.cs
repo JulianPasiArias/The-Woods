@@ -6,12 +6,16 @@ public class NextLevel : MonoBehaviour
      public bool isInRange = false;
      public AudioSource abrir;
 
+    public GameObject interact;
+
    
     
     void Update()
     {
         if(isInRange)
         {
+           interact.SetActive(true);
+            
             if(Input.GetKeyDown(KeyCode.E))
           {
             AbrirPuerta();
@@ -19,6 +23,7 @@ public class NextLevel : MonoBehaviour
             
           }
         }
+       
         
     }
 
@@ -28,13 +33,19 @@ public class NextLevel : MonoBehaviour
        {
            isInRange = true;
        }
-       else
-       {
-           isInRange = false;
-       }
+       
    }
 
-   void AbrirPuerta()
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            isInRange= false;
+            interact.SetActive(false);
+        }
+    }
+
+    void AbrirPuerta()
    {
        abrir.Play();
    }

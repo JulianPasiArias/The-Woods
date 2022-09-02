@@ -11,14 +11,17 @@ public class MuerteRespawn : MonoBehaviour
     public AudioSource audioS;
     public AudioClip clipMuerte;
 
+    public static bool isDead = false;
+    
+
 
   
 
    void Start()
    {
        respawnPoint = transform.position;
-      
-      
+
+
    }
 
   
@@ -28,9 +31,17 @@ public class MuerteRespawn : MonoBehaviour
         if(coll.gameObject.CompareTag ("Planta"))
         {
             Die();
-            Invoke("Respawn", 1.0f);
-           
-            Debug.Log("Moriste");
+          Debug.Log("Moriste"); 
+        }
+        
+       
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("CheckPoint"))
+        {
+            respawnPoint = transform.position;
         }
     }
 
@@ -38,6 +49,8 @@ public class MuerteRespawn : MonoBehaviour
     {
         transform.position = respawnPoint;
         anim.SetTrigger("Idle");
+        isDead = false;
+        ColocarTrampa.cooldown = false;
         
         
        
@@ -45,12 +58,15 @@ public class MuerteRespawn : MonoBehaviour
 
      
 
-    void Die()
+    public void Die()
     {
         anim.SetTrigger("Death");
         EfectoSonido(clipMuerte);
         PlayerUI.health -= 1;
-        
+        isDead = true;
+        Invoke("Respawn", 1.0f);
+
+
 
     }
 

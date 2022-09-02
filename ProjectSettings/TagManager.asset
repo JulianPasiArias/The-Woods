@@ -9,6 +9,13 @@ TagManager:
   - Planta
   - Hongo
   - Roca
+  - Ladder
+  - Skeleton
+  - CheckPoint
+  - Trampa
+  - FxTemporaire
+  - Sopa
+  - Minas
   layers:
   - Default
   - TransparentFX
@@ -21,7 +28,7 @@ TagManager:
   - Piso
   - Player
   - Roca
-  - 
+  - PostProcesado
   - 
   - 
   - 
@@ -58,6 +65,9 @@ TagManager:
   - name: Fondo
     uniqueID: 3806181425
     locked: 0
+  - name: PreFondo
+    uniqueID: 432467661
+    locked: 0
   - name: Piso 2
     uniqueID: 2949945237
     locked: 0
@@ -66,6 +76,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3806271459
+    locked: 0
+  - name: Esqueleto
+    uniqueID: 4284772135
+    locked: 0
+  - name: PreFrente
+    uniqueID: 1579287495
     locked: 0
   - name: Frente
     uniqueID: 3119427697

@@ -2,28 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerUI : MonoBehaviour
 {
     public GameObject heart1, heart2, heart3, gameOverText, mainMenuText, mainMenuBlood;
     public static int health;
-    public static int hongos;
+    
 
     void Start()
     {
         health = 3;
-        hongos = 0;
+       
         gameOverText.SetActive(false);
         mainMenuText.SetActive(false);
         mainMenuBlood.SetActive(false);
 
+
        
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         if (health > 3)
             health = 3;
+       
+        
+        
+      
 
         switch(health)
         {

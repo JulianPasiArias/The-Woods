@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cueva.unity
     guid: ab5883c0f85dd3b49bfb911089552e42
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: 434d20420c12d8b48b76b359a1eeef86
+  - enabled: 1
+    path: Assets/Scenes/Boss Fight.unity
+    guid: 36b9d09f57d4e084a9d49d61bada8ec8
   m_configObjects: {}

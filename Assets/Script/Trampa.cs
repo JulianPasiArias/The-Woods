@@ -9,8 +9,13 @@ public class Trampa : MonoBehaviour
     public GameObject prefab;
     public GameObject roca1,roca2;
 
-    public float tiempo = 4f;
+    public float tiempo = 3f;
     public float tiempoRestante;
+
+    public AudioSource audioS;
+    public AudioClip clipTerremoto;
+
+
 
     void Start()
     {
@@ -51,7 +56,10 @@ public class Trampa : MonoBehaviour
           ActivarTrampa(); 
           tiempoRestante = 4;
           Debug.Log ("La trampa se ha activado, CORRE!!");
-          
+
+            CinemachineShake.Instance.ShakeCamera(20f, 20f);
+            EfectoSonido(clipTerremoto);
+
         }
     }
 
@@ -60,5 +68,11 @@ public class Trampa : MonoBehaviour
         Instantiate (prefab, spawnPoint.position, Quaternion.identity);
         Destroy(roca1);
         Destroy(roca2);
+    }
+
+    void EfectoSonido(AudioClip _clip)
+    {
+        audioS.clip = _clip;
+        audioS.Play();
     }
 }
