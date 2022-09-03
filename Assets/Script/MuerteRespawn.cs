@@ -31,7 +31,8 @@ public class MuerteRespawn : MonoBehaviour
         if(coll.gameObject.CompareTag ("Planta"))
         {
             Die();
-          Debug.Log("Moriste"); 
+            
+            Debug.Log("You Died"); 
         }
         
        
@@ -51,9 +52,10 @@ public class MuerteRespawn : MonoBehaviour
         anim.SetTrigger("Idle");
         isDead = false;
         ColocarTrampa.cooldown = false;
-        
-        
-       
+        PlayerUI.maxHealth = false;
+
+
+
     }
 
      

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PullLever : MonoBehaviour
 {
-    public bool isInRange = false;
+    private bool isInRange = false;
     private Animator anim;
     public static bool isPulled = false;
 
@@ -35,10 +35,15 @@ public class PullLever : MonoBehaviour
             
             isInRange = true;
         }
-        else
+       
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
-        }
+        }    
     }
 
     void LeverPull()

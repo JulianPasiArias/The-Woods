@@ -22,6 +22,10 @@ public class Habilidad : MonoBehaviour
         {
             abilityImage1.fillAmount = 1;
         }
+        if(ColocarTrampa.cooldown == false)
+        {
+            abilityImage1.fillAmount = 0;
+        }
     }
 
     void Abillity1()

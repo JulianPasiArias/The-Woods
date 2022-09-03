@@ -16,6 +16,7 @@ TagManager:
   - FxTemporaire
   - Sopa
   - Minas
+  - Cueva
   layers:
   - Default
   - TransparentFX

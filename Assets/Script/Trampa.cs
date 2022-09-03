@@ -7,7 +7,8 @@ public class Trampa : MonoBehaviour
 
     public Transform spawnPoint;
     public GameObject prefab;
-    public GameObject roca1,roca2;
+    private bool rockSpawned = false;
+    public GameObject roca1, luz;
 
     public float tiempo = 3f;
     public float tiempoRestante;
@@ -26,7 +27,11 @@ public class Trampa : MonoBehaviour
     
     void Update()
     {
-        
+       if(DestroyRock.rockDestroyed)
+        {
+            luz.SetActive(true);
+            Debug.Log("A new path has been revealed");
+        }
     }
 
     void OnTriggerStay2D(Collider2D col)
@@ -36,6 +41,7 @@ public class Trampa : MonoBehaviour
         {
            
             Temporizador();
+           
             
            
             
@@ -51,23 +57,31 @@ public class Trampa : MonoBehaviour
     void Temporizador()
     {
         tiempoRestante -= Time.deltaTime;
-        if( tiempoRestante < 0f)
+        if( tiempoRestante < 0f && rockSpawned == false)
         {
-          ActivarTrampa(); 
-          tiempoRestante = 4;
-          Debug.Log ("La trampa se ha activado, CORRE!!");
+          ActivarTrampa();
+            rockSpawned = true;
+            tiempoRestante = 4;
+          Debug.Log ("IT´S A TRAP!! RUN!!");
 
-            CinemachineShake.Instance.ShakeCamera(20f, 20f);
+            CinemachineShake.Instance.ShakeCamera(10f, 25f);
             EfectoSonido(clipTerremoto);
 
+            
+
         }
+       
     }
 
     void ActivarTrampa()
     {
         Instantiate (prefab, spawnPoint.position, Quaternion.identity);
         Destroy(roca1);
-        Destroy(roca2);
+
+        
+
+
+
     }
 
     void EfectoSonido(AudioClip _clip)

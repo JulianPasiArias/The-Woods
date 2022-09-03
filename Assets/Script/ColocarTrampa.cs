@@ -27,6 +27,7 @@ public class ColocarTrampa : MonoBehaviour
         {
             Instantiate(trampa, spawnTrampa.position, Quaternion.identity);
             ContadorMinas.minas -= 1;
+            ContadorMinas.maxAmmo = false;
 
 
 

@@ -7,12 +7,9 @@ public class Collectable1 : MonoBehaviour
     public AudioSource audioS;
     public AudioClip clipCollectable;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void CollectLife()
     {
-        if(collision.gameObject.CompareTag("Sopa"))
-        {
-            EfectoSonido(clipCollectable);
-        }
+        EfectoSonido(clipCollectable);
     }
 
     void EfectoSonido(AudioClip _clip)

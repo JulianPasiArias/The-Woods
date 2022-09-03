@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class LoadDungeon : MonoBehaviour
 {
 
-    public bool isInRange = false;
+    private bool isInRange = false;
     private Animator anim;
 
     private bool open = false;
 
-    public GameObject dialogo; 
+    public GameObject dialogo, transition; 
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -26,8 +26,10 @@ public class LoadDungeon : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SceneManager.LoadScene(4);
+                transition.SetActive(true);
+                Invoke("Load", 1f);
                 PullLever.isPulled = false;
+                
 
             }
            
@@ -50,6 +52,7 @@ public class LoadDungeon : MonoBehaviour
        if(PullLever.isPulled)
         {
             anim.SetTrigger("Open");
+            open = true;
         }
            
         
@@ -75,5 +78,10 @@ public class LoadDungeon : MonoBehaviour
         {
             dialogo.SetActive(false);
         }
+    }
+
+    void Load()
+    {
+        SceneManager.LoadScene(4);
     }
 }

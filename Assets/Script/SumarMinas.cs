@@ -5,11 +5,19 @@ using UnityEngine;
 public class SumarMinas : MonoBehaviour
 {
 
+  
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && ContadorMinas.maxAmmo == false) 
         {
-            ContadorMinas.minas = 3;
+            CollectAmmo collectAmmo = collision.gameObject.GetComponent<CollectAmmo>();
+            if(collectAmmo != null)
+            {
+                collectAmmo.CollectingAmmo();
+            }
+            ContadorMinas.minas = 5;
+            ContadorMinas.maxAmmo = true;
             Destroy(gameObject);
         }
     }

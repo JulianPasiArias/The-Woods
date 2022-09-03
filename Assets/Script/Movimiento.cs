@@ -39,6 +39,9 @@ public class Movimiento : MonoBehaviour
             if (isGrounded)
             {
                 Jump();
+                
+                
+
             }
         }
        
@@ -102,7 +105,7 @@ public class Movimiento : MonoBehaviour
 
     void Jump()
     {
-        if( Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isJumping == false) 
         {
             rb2D.velocity = Vector2.up * jumpForce;
             anim.SetBool("Jump", true);
@@ -110,8 +113,10 @@ public class Movimiento : MonoBehaviour
         }
         else
         {
+            isJumping = false;
             anim.SetBool("Jump", false);
         }
+       
       
     }
 

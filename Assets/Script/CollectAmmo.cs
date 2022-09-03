@@ -7,13 +7,11 @@ public class CollectAmmo : MonoBehaviour
     public AudioSource audioS;
     public AudioClip clipAmmo;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   public void CollectingAmmo()
     {
-        if(collision.gameObject.CompareTag("Minas"))
-        {
-            EfectoSonido(clipAmmo);
-            ColocarTrampa.cooldown = false;
-        }
+        EfectoSonido(clipAmmo);
+        ColocarTrampa.cooldown = false;
+        print("sonido");
     }
 
     void EfectoSonido(AudioClip _clip)

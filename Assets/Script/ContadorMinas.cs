@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class ContadorMinas : MonoBehaviour
 {
-    public static int minas = 3;
+    public static int minas = 5;
     Text  textMinas;
+    public static bool maxAmmo = true;
 
 
     void Start()
@@ -19,7 +20,14 @@ public class ContadorMinas : MonoBehaviour
     {
         textMinas.text = minas.ToString();
 
-        if(minas > 3)
-            minas = 3;
+        if(minas >= 5)
+        {
+            minas = 5;
+            
+           
+        }
+           
+            
+
     }
 }

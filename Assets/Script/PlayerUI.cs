@@ -7,6 +7,8 @@ public class PlayerUI : MonoBehaviour
 {
     public GameObject heart1, heart2, heart3, gameOverText, mainMenuText, mainMenuBlood;
     public static int health;
+
+    public static bool maxHealth = true;
     
 
     void Start()
@@ -25,7 +27,11 @@ public class PlayerUI : MonoBehaviour
     void Update()
     {
         if (health > 3)
+        {
             health = 3;
+            maxHealth = true;
+        }
+            
        
         
         

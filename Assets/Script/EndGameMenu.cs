@@ -10,7 +10,7 @@ public class EndGameMenu : MonoBehaviour
     
     void Update()
     {
-        ShowCanvas();
+        Invoke("ShowCanvas", 2.0f);
     }
 
 
@@ -23,4 +23,5 @@ public class EndGameMenu : MonoBehaviour
 
         }
     }
+
 }

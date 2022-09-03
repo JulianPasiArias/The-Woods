@@ -6,7 +6,9 @@ public class NextLevel : MonoBehaviour
      public bool isInRange = false;
      public AudioSource abrir;
 
-    public GameObject interact;
+    public GameObject interact, transition;
+
+
 
    
     
@@ -16,10 +18,12 @@ public class NextLevel : MonoBehaviour
         {
            interact.SetActive(true);
             
+            
             if(Input.GetKeyDown(KeyCode.E))
           {
-            AbrirPuerta();
-            Invoke("LoadNextLevel", 1.0f);
+             transition.SetActive(true);
+             AbrirPuerta();
+             Invoke("LoadNextLevel", 1f);
             
           }
         }
