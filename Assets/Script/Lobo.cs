@@ -7,8 +7,9 @@ public class Lobo : MonoBehaviour
         public Transform player;
         public float agroRange;
         public float speed = 3f;
-            
-      
+        
+
+
         public Animator anim;
         Rigidbody2D rb;
 
@@ -43,6 +44,7 @@ public class Lobo : MonoBehaviour
           
         }
        
+
     }
 
     

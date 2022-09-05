@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7917179500339154432}
   - component: {fileID: 7917179500339154433}
   - component: {fileID: 7917179500339154446}
+  - component: {fileID: 1459239145210733064}
   m_Layer: 0
   m_Name: Roca
   m_TagString: Planta
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1175539599
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1d3e85bc66c01564dadec22ff9541b5b, type: 3}
   m_Color: {r: 0.38823533, g: 0.13333334, b: 0.011764707, a: 1}
@@ -117,6 +118,18 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4316302, y: -0.09770063}
+  m_Offset: {x: -0.32216662, y: -0.58129877}
   serializedVersion: 2
-  m_Radius: 2.874643
+  m_Radius: 2.0954642
+--- !u!114 &1459239145210733064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917179500339154447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e977b4a2b5cad2d419342b7109d3b6b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
