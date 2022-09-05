@@ -5,19 +5,22 @@ using UnityEngine;
 
 public class PlayerUI : MonoBehaviour
 {
-    public GameObject heart1, heart2, heart3, gameOverText, mainMenuText, mainMenuBlood;
+    public GameObject heart1, heart2, heart3;
     public static int health;
 
     public static bool maxHealth = true;
+
+   
+
+    
     
 
     void Start()
     {
         health = 3;
        
-        gameOverText.SetActive(false);
-        mainMenuText.SetActive(false);
-        mainMenuBlood.SetActive(false);
+       
+       
 
 
        
@@ -30,7 +33,16 @@ public class PlayerUI : MonoBehaviour
         {
             health = 3;
             maxHealth = true;
+            
         }
+        else if (health <= 0)
+        {
+            GameOverMenu.gameOver = true;
+        }
+       
+       
+       
+        
             
        
         
@@ -61,10 +73,10 @@ public class PlayerUI : MonoBehaviour
                 heart1.SetActive(false);
                 heart2.SetActive(false);
                 heart3.SetActive(false);
-                Invoke("TiempoParado", 0.8f);
-                gameOverText.SetActive(true);
-                mainMenuText.SetActive(true);
-                mainMenuBlood.SetActive(true);
+                
+                
+           
+                
 
                 break;
 
@@ -73,8 +85,5 @@ public class PlayerUI : MonoBehaviour
 
     }
 
-    void TiempoParado()
-    {
-        Time.timeScale = 0;
-    }
+   
 }

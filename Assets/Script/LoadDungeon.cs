@@ -70,14 +70,18 @@ public class LoadDungeon : MonoBehaviour
 
     void ShowDialogue()
     {
-        if(isInRange && PullLever.isPulled == false)
+        if(open == false)
         {
-            dialogo.SetActive(true);
+            if (isInRange && PullLever.isPulled == false)
+            {
+                dialogo.SetActive(true);
+            }
+            else
+            {
+                dialogo.SetActive(false);
+            }
         }
-        else
-        {
-            dialogo.SetActive(false);
-        }
+
     }
 
     void Load()
